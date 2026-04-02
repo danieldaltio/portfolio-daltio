@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Daltio | Desenvolvedor Python Senior</title>
-    <meta name="description" content="Desenvolvedor Python com 8 anos de experiência. Especializado em automação, bots, scraping e APIs.">
+    <title>Daniel Daltio | Senior Python Developer</title>
+    <meta name="description" content="Python Developer with 8 years of experience. Specialized in automation, bots, scraping and APIs.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -30,7 +30,6 @@
             line-height: 1.6;
         }
 
-        /* Animated Background */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -50,7 +49,6 @@
             padding: 0 20px;
         }
 
-        /* Header */
         header {
             padding: 20px 0;
             position: fixed;
@@ -89,7 +87,25 @@
             color: var(--primary);
         }
 
-        /* Hero Section */
+        .lang-toggle {
+            background: rgba(0, 212, 170, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lang-toggle:hover {
+            background: var(--primary);
+            color: var(--secondary);
+        }
+
         .hero {
             min-height: 100vh;
             display: flex;
@@ -190,7 +206,6 @@
             background: rgba(0, 212, 170, 0.1);
         }
 
-        /* Profile Image */
         .hero-image {
             display: flex;
             justify-content: center;
@@ -267,7 +282,6 @@
             transform: translateY(-3px);
         }
 
-        /* Skills Section */
         .skills {
             padding: 100px 0;
         }
@@ -324,7 +338,6 @@
             font-size: 0.95rem;
         }
 
-        /* Services Section */
         .services {
             padding: 100px 0;
             background: rgba(0, 0, 0, 0.3);
@@ -387,7 +400,6 @@
             color: var(--text-muted);
         }
 
-        /* Projects Section */
         .projects {
             padding: 100px 0;
         }
@@ -450,7 +462,6 @@
             font-size: 0.8rem;
         }
 
-        /* Testimonials */
         .testimonials {
             padding: 100px 0;
             background: rgba(0, 0, 0, 0.3);
@@ -493,7 +504,6 @@
             font-weight: bold;
         }
 
-        /* Contact */
         .contact {
             padding: 100px 0;
         }
@@ -566,7 +576,6 @@
             border-color: var(--primary);
         }
 
-        /* Footer */
         footer {
             padding: 30px 0;
             text-align: center;
@@ -574,7 +583,6 @@
             color: var(--text-muted);
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .hero-content {
                 grid-template-columns: 1fr;
@@ -597,7 +605,6 @@
             }
         }
 
-        /* Floating CTA */
         .floating-cta {
             position: fixed;
             bottom: 30px;
@@ -631,43 +638,47 @@
         <div class="container header-content">
             <div class="logo">Daniel<span>Daltio</span></div>
             <nav>
-                <a href="#skills">Skills</a>
-                <a href="#services">Serviços</a>
-                <a href="#projects">Projetos</a>
-                <a href="#contact">Contato</a>
+                <a href="#skills" data-i18n="nav_skills">Skills</a>
+                <a href="#services" data-i18n="nav_services">Services</a>
+                <a href="#projects" data-i18n="nav_projects">Projects</a>
+                <a href="#contact" data-i18n="nav_contact">Contact</a>
             </nav>
+            <button class="lang-toggle" onclick="toggleLanguage()">
+                <i class="fas fa-globe"></i>
+                <span id="lang-label">PT</span>
+            </button>
         </div>
     </header>
 
     <section class="hero">
         <div class="container hero-content">
             <div class="hero-text">
-                <span class="tagline">✨ 8 Anos de Experiência</span>
-                <h1>Desenvolvedor <span>Python</span><br>Senior</h1>
-                <p>Transformo ideias em soluções inteligentes. Especializado em automação, bots, scraping e desenvolvimento de APIs de alta performance.</p>
+                <span class="tagline" data-i18n="tagline">✨ 8 Years Experience</span>
+                <h1><span>Python</span><br>Developer</h1>
+                <p data-i18n="hero_desc">I turn ideas into smart solutions. Specialized in automation, bots, scraping and high-performance API development.</p>
                 
                 <div class="stats">
                     <div class="stat">
                         <div class="stat-number">50+</div>
-                        <div class="stat-label">Projetos</div>
+                        <div class="stat-label" data-i18n="stat_projects">Projects</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">30+</div>
-                        <div class="stat-label">Clientes</div>
+                        <div class="stat-label" data-i18n="stat_clients">Clients</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">8</div>
-                        <div class="stat-label">Anos</div>
+                        <div class="stat-label" data-i18n="stat_years">Years</div>
                     </div>
                 </div>
 
                 <div class="cta-buttons">
                     <a href="#contact" class="btn btn-primary">
                         <i class="fab fa-whatsapp"></i>
-                        Falar Comigo
+                        <span data-i18n="cta_talk">Talk to Me</span>
                     </a>
                     <a href="#projects" class="btn btn-secondary">
-                        Ver Projetos
+                        <span data-i18n="cta_projects">View Projects</span>
                     </a>
                 </div>
             </div>
@@ -700,37 +711,37 @@
 
     <section class="skills" id="skills">
         <div class="container">
-            <h2 class="section-title">Minhas <span>Skills</span></h2>
+            <h2 class="section-title"><span data-i18n="skills_title">My</span> Skills</h2>
             <div class="skills-grid">
                 <div class="skill-card">
                     <div class="skill-icon"><i class="fab fa-python"></i></div>
                     <h3>Python</h3>
-                    <p>8 anos de experiência. Scripts, automações, APIs e soluções personalizadas.</p>
+                    <p data-i18n="skill_python">8 years experience. Scripts, automation, APIs and custom solutions.</p>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon"><i class="fas fa-robot"></i></div>
-                    <h3>Bots & Automação</h3>
-                    <p>Bots para WhatsApp, Telegram, Discord. Automação de tarefas repetitivas.</p>
+                    <h3 data-i18n="skill_bots_title">Bots & Automation</h3>
+                    <p data-i18n="skill_bots">Bots for WhatsApp, Telegram, Discord. Task automation.</p>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon"><i class="fas fa-spider"></i></div>
-                    <h3>Web Scraping</h3>
-                    <p>Extração de dados de qualquer site. APIs, crawlers e parsers.</p>
+                    <h3 data-i18n="skill_scraping_title">Web Scraping</h3>
+                    <p data-i18n="skill_scraping">Data extraction from any site. APIs, crawlers and parsers.</p>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon"><i class="fas fa-server"></i></div>
                     <h3>APIs REST</h3>
-                    <p>Desenvolvimento de APIs robustas com Flask, FastAPI e Django.</p>
+                    <p data-i18n="skill_api">Robust API development with Flask, FastAPI and Django.</p>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon"><i class="fas fa-database"></i></div>
-                    <h3>Banco de Dados</h3>
-                    <p>PostgreSQL, MySQL, MongoDB, Redis. Modelagem e otimização.</p>
+                    <h3 data-i18n="skill_db_title">Databases</h3>
+                    <p data-i18n="skill_db">PostgreSQL, MySQL, MongoDB, Redis. Modeling and optimization.</p>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon"><i class="fab fa-docker"></i></div>
                     <h3>DevOps</h3>
-                    <p>Docker, CI/CD, AWS, Deploy em nuvem. Infraestrutura como código.</p>
+                    <p data-i18n="skill_devops">Docker, CI/CD, AWS, Cloud Deploy. Infrastructure as code.</p>
                 </div>
             </div>
         </div>
@@ -738,58 +749,58 @@
 
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Meus <span>Serviços</span></h2>
+            <h2 class="section-title"><span data-i18n="services_title">My</span> Services</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-robot"></i></div>
-                    <h3>Bots Personalizados</h3>
-                    <p>Bots inteligentes para automatizar tarefas e melhorar seu negócio.</p>
+                    <h3 data-i18n="service_bots_title">Custom Bots</h3>
+                    <p data-i18n="service_bots_desc">Smart bots to automate tasks and improve your business.</p>
                     <ul>
-                        <li>WhatsApp Bot</li>
-                        <li>Telegram Bot</li>
-                        <li>Discord Bot</li>
-                        <li>Automação Web</li>
+                        <li data-i18n="service_bots_1">WhatsApp Bot</li>
+                        <li data-i18n="service_bots_2">Telegram Bot</li>
+                        <li data-i18n="service_bots_3">Discord Bot</li>
+                        <li data-i18n="service_bots_4">Web Automation</li>
                     </ul>
-                    <div class="price">$150 - $500 <span>/ projeto</span></div>
+                    <div class="price">$150 - $500 <span>/ project</span></div>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-spider"></i></div>
-                    <h3>Web Scraping</h3>
-                    <p>Extração de dados de qualquer site ou plataforma.</p>
+                    <h3 data-i18n="service_scraping_title">Web Scraping</h3>
+                    <p data-i18n="service_scraping_desc">Data extraction from any site or platform.</p>
                     <ul>
-                        <li>Crawlers customizados</li>
-                        <li>APIs de dados</li>
-                        <li>Monitoramento</li>
-                        <li>Relatórios automáticos</li>
+                        <li data-i18n="service_scraping_1">Custom crawlers</li>
+                        <li data-i18n="service_scraping_2">Data APIs</li>
+                        <li data-i18n="service_scraping_3">Monitoring</li>
+                        <li data-i18n="service_scraping_4">Automatic reports</li>
                     </ul>
-                    <div class="price">$100 - $400 <span>/ projeto</span></div>
+                    <div class="price">$100 - $400 <span>/ project</span></div>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-code"></i></div>
-                    <h3>Desenvolvimento API</h3>
-                    <p>APIs robustas e escaláveis para seu projeto.</p>
+                    <h3 data-i18n="service_api_title">API Development</h3>
+                    <p data-i18n="service_api_desc">Robust and scalable APIs for your project.</p>
                     <ul>
                         <li>REST API</li>
-                        <li>Autenticação</li>
-                        <li>Documentação</li>
-                        <li>Integrações</li>
+                        <li data-i18n="service_api_1">Authentication</li>
+                        <li data-i18n="service_api_2">Documentation</li>
+                        <li data-i18n="service_api_3">Integrations</li>
                     </ul>
-                    <div class="price">$200 - $800 <span>/ projeto</span></div>
+                    <div class="price">$200 - $800 <span>/ project</span></div>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-cogs"></i></div>
-                    <h3>Automação Empresarial</h3>
-                    <p>Automatize processos da sua empresa.</p>
+                    <h3 data-i18n="service_auto_title">Business Automation</h3>
+                    <p data-i18n="service_auto_desc">Automate your company processes.</p>
                     <ul>
-                        <li>Planilhas automáticas</li>
-                        <li>Relatórios</li>
-                        <li>Integrações</li>
-                        <li>Workflows</li>
+                        <li data-i18n="service_auto_1">Automatic spreadsheets</li>
+                        <li data-i18n="service_auto_2">Reports</li>
+                        <li data-i18n="service_auto_3">Integrations</li>
+                        <li data-i18n="service_auto_4">Workflows</li>
                     </ul>
-                    <div class="price">$300 - $1000 <span>/ projeto</span></div>
+                    <div class="price">$300 - $1000 <span>/ project</span></div>
                 </div>
             </div>
         </div>
@@ -797,15 +808,15 @@
 
     <section class="projects" id="projects">
         <div class="container">
-            <h2 class="section-title">Projetos <span>Recentes</span></h2>
+            <h2 class="section-title"><span data-i18n="projects_title">Recent</span> Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
                         <i class="fab fa-whatsapp"></i>
                     </div>
                     <div class="project-content">
-                        <h3>WhatsApp Bot Multi-funcional</h3>
-                        <p>Bot completo para gestão de clientes, agendamentos e automação de vendas.</p>
+                        <h3 data-i18n="project1_title">Multi-functional WhatsApp Bot</h3>
+                        <p data-i18n="project1_desc">Complete bot for client management, scheduling and sales automation.</p>
                         <div class="project-tags">
                             <span class="project-tag">Python</span>
                             <span class="project-tag">WhatsApp</span>
@@ -819,8 +830,8 @@
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <div class="project-content">
-                        <h3>Sistema de Web Scraping Financeiro</h3>
-                        <p>Coleta automática de dados de bolsas de valores e geração de relatórios.</p>
+                        <h3 data-i18n="project2_title">Financial Web Scraping System</h3>
+                        <p data-i18n="project2_desc">Automatic data collection from stock exchanges and report generation.</p>
                         <div class="project-tags">
                             <span class="project-tag">Python</span>
                             <span class="project-tag">Scraping</span>
@@ -834,8 +845,8 @@
                         <i class="fas fa-store"></i>
                     </div>
                     <div class="project-content">
-                        <h3>API E-commerce</h3>
-                        <p>API completa para gestão de produtos, pedidos e integração com marketplaces.</p>
+                        <h3>E-commerce API</h3>
+                        <p data-i18n="project3_desc">Complete API for product management, orders and marketplace integration.</p>
                         <div class="project-tags">
                             <span class="project-tag">FastAPI</span>
                             <span class="project-tag">PostgreSQL</span>
@@ -849,35 +860,35 @@
 
     <section class="testimonials">
         <div class="container">
-            <h2 class="section-title">O que dizem <span>Clientes</span></h2>
+            <h2 class="section-title"><span data-i18n="testimonials_title">What</span> Clients Say</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"Daniel entregou um bot de WhatsApp que automatizou 80% do nosso atendimento. Excelente trabalho!"</p>
+                    <p class="testimonial-text">"Daniel delivered a WhatsApp bot that automated 80% of our customer service. Excellent work!"</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">JM</div>
                         <div>
                             <strong>João Marcos</strong>
-                            <p>Diretor, Empresa Tech</p>
+                            <p data-i18n="testimonial1_role">Director, Tech Company</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"Projeto de scraping exceeded expectations. Dados precisos e entrega no prazo."</p>
+                    <p class="testimonial-text">"Scraping project exceeded expectations. Accurate data and on-time delivery."</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">RS</div>
                         <div>
                             <strong>Ricardo Silva</strong>
-                            <p>CEO, Startup Digital</p>
+                            <p data-i18n="testimonial2_role">CEO, Digital Startup</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-text">"Profesionalismo nota 10. Código limpo, bem documentado e sempre disponível para suporte."</p>
+                    <p class="testimonial-text">"Professionalism 10/10. Clean code, well documented and always available for support."</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">AP</div>
                         <div>
                             <strong>Ana Paula</strong>
-                            <p>Gerente, Agência Digital</p>
+                            <p data-i18n="testimonial3_role">Manager, Digital Agency</p>
                         </div>
                     </div>
                 </div>
@@ -887,11 +898,11 @@
 
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Vamos <span>Conversar</span></h2>
+            <h2 class="section-title"><span data-i18n="contact_title">Let's</span> Talk</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Entre em contato</h3>
-                    <p>Tem um projeto em mente? Vamos discutir como posso ajudar a transformar sua ideia em realidade.</p>
+                    <h3 data-i18n="contact_heading">Get in touch</h3>
+                    <p data-i18n="contact_desc">Have a project in mind? Let's discuss how I can help turn your idea into reality.</p>
                     
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
@@ -907,26 +918,26 @@
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-whatsapp"></i>
-                        <span>Disponível para语音</span>
+                        <span data-i18n="whatsapp_available">Available for voice</span>
                     </div>
                 </div>
 
                 <div class="contact-form">
                     <form>
                         <div class="form-group">
-                            <label>Nome</label>
-                            <input type="text" placeholder="Seu nome">
+                            <label data-i18n="form_name">Name</label>
+                            <input type="text" placeholder="Your name">
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" placeholder="seu@email.com">
+                            <input type="email" placeholder="your@email.com">
                         </div>
                         <div class="form-group">
-                            <label>Mensagem</label>
-                            <textarea rows="5" placeholder="Descreva seu projeto..."></textarea>
+                            <label data-i18n="form_message">Message</label>
+                            <textarea rows="5" placeholder="Describe your project..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
-                            Enviar Mensagem
+                            <span data-i18n="form_submit">Send Message</span>
                         </button>
                     </form>
                 </div>
@@ -936,15 +947,181 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 Daniel Daltio. Todos os direitos reservados.</p>
+            <p>© 2026 Daniel Daltio. All rights reserved.</p>
         </div>
     </footer>
 
     <div class="floating-cta">
         <a href="https://wa.me/5511954788091" target="_blank">
             <i class="fab fa-whatsapp"></i>
-            Falar no WhatsApp
+            <span data-i18n="cta_whatsapp">Chat on WhatsApp</span>
         </a>
     </div>
+
+    <script>
+        const translations = {
+            en: {
+                nav_skills: "Skills",
+                nav_services: "Services",
+                nav_projects: "Projects",
+                nav_contact: "Contact",
+                tagline: "✨ 8 Years Experience",
+                hero_desc: "I turn ideas into smart solutions. Specialized in automation, bots, scraping and high-performance API development.",
+                stat_projects: "Projects",
+                stat_clients: "Clients",
+                stat_years: "Years",
+                cta_talk: "Talk to Me",
+                cta_projects: "View Projects",
+                skills_title: "My",
+                skill_python: "8 years experience. Scripts, automation, APIs and custom solutions.",
+                skill_bots_title: "Bots & Automation",
+                skill_bots: "Bots for WhatsApp, Telegram, Discord. Task automation.",
+                skill_scraping_title: "Web Scraping",
+                skill_scraping: "Data extraction from any site. APIs, crawlers and parsers.",
+                skill_api: "Robust API development with Flask, FastAPI and Django.",
+                skill_db_title: "Databases",
+                skill_db: "PostgreSQL, MySQL, MongoDB, Redis. Modeling and optimization.",
+                skill_devops: "Docker, CI/CD, AWS, Cloud Deploy. Infrastructure as code.",
+                services_title: "My",
+                service_bots_title: "Custom Bots",
+                service_bots_desc: "Smart bots to automate tasks and improve your business.",
+                service_bots_1: "WhatsApp Bot",
+                service_bots_2: "Telegram Bot",
+                service_bots_3: "Discord Bot",
+                service_bots_4: "Web Automation",
+                service_scraping_title: "Web Scraping",
+                service_scraping_desc: "Data extraction from any site or platform.",
+                service_scraping_1: "Custom crawlers",
+                service_scraping_2: "Data APIs",
+                service_scraping_3: "Monitoring",
+                service_scraping_4: "Automatic reports",
+                service_api_title: "API Development",
+                service_api_desc: "Robust and scalable APIs for your project.",
+                service_api_1: "Authentication",
+                service_api_2: "Documentation",
+                service_api_3: "Integrations",
+                service_auto_title: "Business Automation",
+                service_auto_desc: "Automate your company processes.",
+                service_auto_1: "Automatic spreadsheets",
+                service_auto_2: "Reports",
+                service_auto_3: "Integrations",
+                service_auto_4: "Workflows",
+                projects_title: "Recent",
+                project1_title: "Multi-functional WhatsApp Bot",
+                project1_desc: "Complete bot for client management, scheduling and sales automation.",
+                project2_title: "Financial Web Scraping System",
+                project2_desc: "Automatic data collection from stock exchanges and report generation.",
+                project3_desc: "Complete API for product management, orders and marketplace integration.",
+                testimonials_title: "What",
+                testimonial1_role: "Director, Tech Company",
+                testimonial2_role: "CEO, Digital Startup",
+                testimonial3_role: "Manager, Digital Agency",
+                contact_title: "Let's",
+                contact_heading: "Get in touch",
+                contact_desc: "Have a project in mind? Let's discuss how I can help turn your idea into reality.",
+                whatsapp_available: "Available for voice",
+                form_name: "Name",
+                form_message: "Message",
+                form_submit: "Send Message",
+                cta_whatsapp: "Chat on WhatsApp"
+            },
+            pt: {
+                nav_skills: "Skills",
+                nav_services: "Serviços",
+                nav_projects: "Projetos",
+                nav_contact: "Contato",
+                tagline: "✨ 8 Anos de Experiência",
+                hero_desc: "Transformo ideias em soluções inteligentes. Especializado em automação, bots, scraping e desenvolvimento de APIs de alta performance.",
+                stat_projects: "Projetos",
+                stat_clients: "Clientes",
+                stat_years: "Anos",
+                cta_talk: "Falar Comigo",
+                cta_projects: "Ver Projetos",
+                skills_title: "Minhas",
+                skill_python: "8 anos de experiência. Scripts, automações, APIs e soluções personalizadas.",
+                skill_bots_title: "Bots & Automação",
+                skill_bots: "Bots para WhatsApp, Telegram, Discord. Automação de tarefas repetitivas.",
+                skill_scraping_title: "Web Scraping",
+                skill_scraping: "Extração de dados de qualquer site. APIs, crawlers e parsers.",
+                skill_api: "Desenvolvimento de APIs robustas com Flask, FastAPI e Django.",
+                skill_db_title: "Banco de Dados",
+                skill_db: "PostgreSQL, MySQL, MongoDB, Redis. Modelagem e otimização.",
+                skill_devops: "Docker, CI/CD, AWS, Deploy em nuvem. Infraestrutura como código.",
+                services_title: "Meus",
+                service_bots_title: "Bots Personalizados",
+                service_bots_desc: "Bots inteligentes para automatizar tarefas e melhorar seu negócio.",
+                service_bots_1: "WhatsApp Bot",
+                service_bots_2: "Telegram Bot",
+                service_bots_3: "Discord Bot",
+                service_bots_4: "Automação Web",
+                service_scraping_title: "Web Scraping",
+                service_scraping_desc: "Extração de dados de qualquer site ou plataforma.",
+                service_scraping_1: "Crawlers customizados",
+                service_scraping_2: "APIs de dados",
+                service_scraping_3: "Monitoramento",
+                service_scraping_4: "Relatórios automáticos",
+                service_api_title: "Desenvolvimento API",
+                service_api_desc: "APIs robustas e escaláveis para seu projeto.",
+                service_api_1: "Autenticação",
+                service_api_2: "Documentação",
+                service_api_3: "Integrações",
+                service_auto_title: "Automação Empresarial",
+                service_auto_desc: "Automatize processos da sua empresa.",
+                service_auto_1: "Planilhas automáticas",
+                service_auto_2: "Relatórios",
+                service_auto_3: "Integrações",
+                service_auto_4: "Workflows",
+                projects_title: "Projetos",
+                project1_title: "WhatsApp Bot Multi-funcional",
+                project1_desc: "Bot completo para gestão de clientes, agendamentos e automação de vendas.",
+                project2_title: "Sistema de Web Scraping Financeiro",
+                project2_desc: "Coleta automática de dados de bolsas de valores e geração de relatórios.",
+                project3_desc: "API completa para gestão de produtos, pedidos e integração com marketplaces.",
+                testimonials_title: "O que dizem",
+                testimonial1_role: "Diretor, Empresa Tech",
+                testimonial2_role: "CEO, Startup Digital",
+                testimonial3_role: "Gerente, Agência Digital",
+                contact_title: "Vamos",
+                contact_heading: "Entre em contato",
+                contact_desc: "Tem um projeto em mente? Vamos discutir como posso ajudar a transformar sua ideia em realidade.",
+                whatsapp_available: "Disponível para语音",
+                form_name: "Nome",
+                form_message: "Mensagem",
+                form_submit: "Enviar Mensagem",
+                cta_whatsapp: "Falar no WhatsApp"
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'pt' : 'en';
+            document.getElementById('lang-label').textContent = currentLang.toUpperCase();
+            document.documentElement.lang = currentLang;
+            
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.textContent = translations[currentLang][key];
+                }
+            });
+            
+            localStorage.setItem('portfolio_lang', currentLang);
+        }
+
+        const savedLang = localStorage.getItem('portfolio_lang');
+        if (savedLang) {
+            currentLang = savedLang;
+            document.getElementById('lang-label').textContent = currentLang.toUpperCase();
+            document.documentElement.lang = currentLang;
+            
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.textContent = translations[currentLang][key];
+                }
+            });
+        }
+    </script>
 </body>
 </html>
